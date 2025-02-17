@@ -21,11 +21,9 @@ else:
     import snake_training
 
 # setting the reward and penalty values
-# if we don't eat the food, we get a penalty of -1
 # if we eat the food, we get a reward of 50000000
 # if we get over the game, we get a penalty of -10000
 # if we eat a medicine, we get a penalty of -10
-rewardAlive = -1
 rewardKill =  -10000
 rewardScore = 50000000
 rewardDeleteBodyScore = -100
