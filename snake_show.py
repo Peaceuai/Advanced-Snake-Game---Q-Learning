@@ -221,13 +221,16 @@ def mainGame(emulate, fps_controller, onGameOver, onScore, deleteScore):
         elif snake_pos[0] == special_food_pos[0] and snake_pos[1] == special_food_pos[1]:
             game_over(emulate, colors, score, game_window, screenSize, onGameOver)
         elif snake_pos[0] == delete_body_food_pos[0] and snake_pos[1] == delete_body_food_pos[1]:
+            # Snake body growing mechanism
+            snake_body.pop()
+
             score -= 1
             moveSinceScore = 0
             deleteScore(params)
             delete_body_food_spawn = False
-
-        # Snake body growing mechanism
-        snake_body.pop()
+        else:
+            # Snake body growing mechanism
+            snake_body.pop()
 
         # Spawning food on the screen
         if not food_spawn:
